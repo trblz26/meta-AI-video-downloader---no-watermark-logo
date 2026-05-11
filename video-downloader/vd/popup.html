@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 280px;
+    background: #111318;
+    color: #e8eaf0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 13px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1877f2, #0a4fc4);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header span { font-size: 22px; }
+  .header h1 { font-size: 14px; font-weight: 700; color: #fff; }
+  .header p  { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 1px; }
+
+  .body { padding: 12px; }
+
+  #scanBtn {
+    width: 100%;
+    padding: 10px;
+    background: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .15s;
+  }
+  #scanBtn:hover { opacity: .85; }
+  #scanBtn:disabled { opacity: .45; cursor: default; }
+
+  #list { margin-top: 10px; display: flex; flex-direction: column; gap: 7px; }
+
+  .item {
+    background: #1a1e27;
+    border: 1px solid #252b38;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    animation: fadeIn .18s ease;
+  }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+
+  .item-label { color: #9ca3af; font-size: 11.5px; }
+  .item-label b { display: block; color: #e8eaf0; font-size: 12.5px; font-weight: 600; margin-bottom: 2px; }
+
+  .dl {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    background: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter .15s;
+  }
+  .dl:hover { filter: brightness(1.2); }
+
+  .empty {
+    text-align: center;
+    padding: 20px 10px;
+    color: #6b7280;
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <span>📥</span>
+  <div>
+    <h1>Video Downloader</h1>
+    <p>Tải video từ bất kỳ trang nào</p>
+  </div>
+</div>
+<div class="body">
+  <button id="scanBtn">🔍 Quét video trên trang</button>
+  <div id="list"></div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
